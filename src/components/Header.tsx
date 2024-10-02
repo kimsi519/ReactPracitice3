@@ -3,6 +3,8 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../styles/Header.css";
 import myLogo from "../assets/logo.png";
+import cart from "../assets/shopping-bag.png";
+import user from "../assets/user.png";
 
 // src/index.js 또는 index.tsx
 //import "../styles/index.css";
@@ -26,21 +28,15 @@ const Header: React.FC = () => {
         <div className="flex space-x-6 text-white">
           <Link
             to="/login"
-            className="text-white hover:text-white hover:underline"
+            className="text-white hover:text-white hover:underline filter invert"
           >
-            로그인
-          </Link>
-          <Link
-            to="/register"
-            className="text-white hover:text-white hover:underline"
-          >
-            회원가입
+            <img src={user} alt="user" className="w-7 h-6 object-contain" />
           </Link>
           <Link
             to="/cart"
-            className="text-white hover:text-white hover:underline"
+            className="text-white hover:text-white hover:underline filter invert"
           >
-            <img src="" alt="Logo" className="w-15 h-15 object-contain" />
+            <img src={cart} alt="cart" className="w-7 h-6 object-contain" />
           </Link>
         </div>
       </div>
