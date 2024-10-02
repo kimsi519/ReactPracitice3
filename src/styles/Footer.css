@@ -1,14 +1,17 @@
 /* Footer.css */
+
 .footer {
   background-color: #f1f2f2;
   padding: 20px;
-  text-align: center;
+  text-align: left;
+  font-size : 13px;
 }
 
 .footer__info,
 .footer__customer-service,
 .footer__social-media {
   margin-bottom: 20px;
+  
 }
 
 .footer__social-media a {

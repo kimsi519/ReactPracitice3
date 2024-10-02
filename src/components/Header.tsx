@@ -8,16 +8,16 @@ import myLogo from "../assets/logo.png";
 
 const Header: React.FC = () => {
   return (
-    <header className="header bg-black">
+    <header className="bg-black header">
       {/* 상단 바 */}
       <div className="header__top">
         {/* 로고 */}
-        <div className="w-29 h-12 mt-2">
+        <div className="h-12 mt-2 w-29">
           <Link to="/">
             <img
               src={myLogo}
               alt="Logo"
-              className="w-full h-full object-contain"
+              className="object-contain w-full h-full"
             />
           </Link>
         </div>
@@ -50,10 +50,10 @@ const Header: React.FC = () => {
           <input
             type="text"
             placeholder="10월 멤버스데이 오픈!"
-            className="w-full px-4 py-2 pl-5 rounded-md bg-white text-gray focus:outline-none"
+            className="w-full px-4 py-2 pl-5 bg-white rounded-md text-gray focus:outline-none"
           />
           <svg
-            className="absolute right-7 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer"
+            className="absolute w-5 h-5 text-gray-400 transform -translate-y-1/2 cursor-pointer right-7 top-1/2"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* 네비게이션 메뉴 */}
-      <nav className="flex justify-start space-x-6 bg-black text-gray-400 px-5 py-3">
+      <nav className="flex justify-start px-5 py-3 space-x-6 text-gray-400 bg-black">
         <ul className="flex space-x-6">
           <li>
             <Link
