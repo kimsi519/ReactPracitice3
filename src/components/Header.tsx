@@ -74,42 +74,42 @@ const Header: React.FC = () => {
         <ul className="flex space-x-6">
           <li>
             <Link
-              to="/best"
-              className="text-gray-400  hover:text-white hover:underline"
+              to="category/best"
+              className=" text-gray-400 hover:text-white hover:underline"
             >
               BEST
             </Link>
           </li>
           <li>
             <Link
-              to="/women"
-              className="text-gray-400  hover:text-white hover:underline"
+              to="category/women"
+              className=" text-gray-400 hover:text-white hover:underline"
             >
               WOMEN
             </Link>
           </li>
           <li>
             <Link
-              to="/men"
-              className="text-gray-400  hover:text-white hover:underline"
+              to="category/men"
+              className=" text-gray-400 hover:text-white hover:underline"
             >
               MEN
             </Link>
           </li>
           <li>
             <Link
-              to="/shoes"
-              className="text-gray-400  hover:text-white hover:underline"
+              to="category/shoes"
+              className=" text-gray-400 hover:text-white hover:underline"
             >
               SHOES
             </Link>
           </li>
           <li>
             <Link
-              to="/event"
+              to="category/etc"
               className="text-gray-400 hover:text-white hover:underline"
             >
-              EVENT
+              etc
             </Link>
           </li>
         </ul>
