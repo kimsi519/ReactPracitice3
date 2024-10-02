@@ -2,12 +2,13 @@
 import React from "react";
 import KeyVisual from "./KeyVisual";
 import "../styles/MainContent.css";
+import CardGrid from "./CardGrid";
 
-import Nike01 from "../assets/nike_01.png"
-import Nike02 from "../assets/nike_02.png"
-import Addidas01 from "../assets/addias_01.png"
-import Bitter01 from "../assets/bitter_01.png"
-import Bitter02 from "../assets/bitter_02.png"
+import Nike01 from "../assets/nike_01.png";
+import Nike02 from "../assets/nike_02.png";
+import Addidas01 from "../assets/addias_01.png";
+import Bitter01 from "../assets/bitter_01.png";
+import Bitter02 from "../assets/bitter_02.png";
 
 // 일단 주석으로 놔둘게요!!
 // interface ImageData {
@@ -57,13 +58,7 @@ const MainContent: React.FC = () => {
   //   fetchImages();
   // }, []); // 컴포넌트가 마운트될 때 한 번만 실행
 
-  const definedImages = [
-    Nike01,
-    Nike02,
-    Addidas01,
-    Bitter01,
-    Bitter02
-  ]
+  const definedImages = [Nike01, Nike02, Addidas01, Bitter01, Bitter02];
 
   return (
     <main className="mb-10 main-content">
@@ -88,6 +83,8 @@ const MainContent: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <CardGrid></CardGrid>
     </main>
   );
 };
