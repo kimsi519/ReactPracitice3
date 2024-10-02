@@ -3,6 +3,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../styles/Header.css";
 import myLogo from "../assets/logo.png";
+
 // src/index.js 또는 index.tsx
 //import "../styles/index.css";
 
@@ -39,7 +40,7 @@ const Header: React.FC = () => {
             to="/cart"
             className="text-white hover:text-white hover:underline"
           >
-            장바구니
+            <img src="" alt="Logo" className="w-15 h-15 object-contain" />
           </Link>
         </div>
       </div>
