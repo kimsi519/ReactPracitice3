@@ -74,7 +74,7 @@ const Header: React.FC = () => {
         <ul className="flex space-x-6">
           <li>
             <Link
-              to="/best"
+              to="category/best"
               className=" text-gray-400 hover:text-white hover:underline"
             >
               BEST
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/women"
+              to="category/women"
               className=" text-gray-400 hover:text-white hover:underline"
             >
               WOMEN
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/men"
+              to="category/men"
               className=" text-gray-400 hover:text-white hover:underline"
             >
               MEN
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/shoes"
+              to="category/shoes"
               className=" text-gray-400 hover:text-white hover:underline"
             >
               SHOES
@@ -106,10 +106,10 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/event"
+              to="category/etc"
               className="text-gray-400 hover:text-white hover:underline"
             >
-              EVENT
+              etc
             </Link>
           </li>
         </ul>
