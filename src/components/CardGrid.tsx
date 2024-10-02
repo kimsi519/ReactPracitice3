@@ -43,7 +43,7 @@ const CardGrid: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-wrap space-y-4">
+    <div className="w-full flex flex-wrap space-y-4 mt-7">
       {products.length > 0 ? (
         products.map((product) => <Card product={product}></Card>)
       ) : (

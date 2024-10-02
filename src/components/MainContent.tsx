@@ -4,11 +4,11 @@ import KeyVisual from "./KeyVisual";
 import "../styles/MainContent.css";
 import CardGrid from "./CardGrid";
 
-import Nike01 from "../assets/nike_01.png"
-import Nike02 from "../assets/nike_02.png"
-import Addidas01 from "../assets/addias_01.png"
-import Bitter01 from "../assets/bitter_01.png"
-import Bitter02 from "../assets/bitter_02.png"
+import Nike01 from "../assets/nike_01.png";
+import Nike02 from "../assets/nike_02.png";
+import Addidas01 from "../assets/addias_01.png";
+import Bitter01 from "../assets/bitter_01.png";
+import Bitter02 from "../assets/bitter_02.png";
 
 // 일단 주석으로 놔둘게요!!
 // interface ImageData {
@@ -58,39 +58,19 @@ const MainContent: React.FC = () => {
   //   fetchImages();
   // }, []); // 컴포넌트가 마운트될 때 한 번만 실행
 
-  const definedImages = [
-    Nike01,
-    Nike02,
-    Addidas01,
-    Bitter01,
-    Bitter02
-  ]
+  const definedImages = [Nike01, Nike02, Addidas01, Bitter01, Bitter02];
 
   return (
     <main className="main-content">
-
       {/* 이미지 캐러셀 */}
-    <div style={{ width: '500px', margin: '0 auto'}} className="mb-10">
-      {definedImages.length > 0 ? (
-        <KeyVisual images={definedImages} />
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-
-
-      <h2>신상품</h2>
-      <div className="product-grid">
-        {sampleProducts.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img src={product.imageUrl} alt={product.name} />
-            <h3 className="product-card__name">{product.name}</h3>
-            <p className="product-card__price">
-              {product.price.toLocaleString()}원
-            </p>
-          </div>
-        ))}
+      <div style={{ width: "500px", margin: "0 auto" }} className="mb-10">
+        {definedImages.length > 0 ? (
+          <KeyVisual images={definedImages} />
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
+
       <CardGrid></CardGrid>
     </main>
   );
