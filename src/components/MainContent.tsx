@@ -1,6 +1,7 @@
 // src/components/MainContent.tsx
 import React from "react";
 import "../styles/MainContent.css";
+import CardGrid from "./CardGrid";
 
 interface Product {
   id: number;
@@ -28,18 +29,7 @@ const sampleProducts: Product[] = [
 const MainContent: React.FC = () => {
   return (
     <main className="main-content">
-      <h2>신상품</h2>
-      <div className="product-grid">
-        {sampleProducts.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img src={product.imageUrl} alt={product.name} />
-            <h3 className="product-card__name">{product.name}</h3>
-            <p className="product-card__price">
-              {product.price.toLocaleString()}원
-            </p>
-          </div>
-        ))}
-      </div>
+      <CardGrid></CardGrid>
     </main>
   );
 };
