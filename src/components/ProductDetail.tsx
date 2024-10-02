@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
-import cart from "../assets/cart.svg";
 
 interface Rating {
   count: number;
