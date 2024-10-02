@@ -2,6 +2,7 @@
 import React from "react";
 import KeyVisual from "./KeyVisual";
 import "../styles/MainContent.css";
+import CardGrid from "./CardGrid";
 
 import Nike01 from "../assets/nike_01.png"
 import Nike02 from "../assets/nike_02.png"
@@ -67,6 +68,7 @@ const MainContent: React.FC = () => {
 
   return (
     <main className="main-content">
+
       {/* 이미지 캐러셀 */}
     <div style={{ width: '500px', margin: '0 auto'}} className="mb-10">
       {definedImages.length > 0 ? (
@@ -89,6 +91,7 @@ const MainContent: React.FC = () => {
           </div>
         ))}
       </div>
+      <CardGrid></CardGrid>
     </main>
   );
 };
