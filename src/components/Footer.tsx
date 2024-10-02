@@ -7,13 +7,13 @@ const Footer: React.FC = () => {
     <footer className="footer">
       {/* 회사 정보 */}
       <div className="footer__info">
-        <p className="font-semibold text-gray-600">&copy; MUSINSA ALL RIGHTS RESERVED</p>  
+        <p className="font-semibold text-gray-600">&copy; MUSINIL ALL RIGHTS RESERVED</p>  
       </div>
 
       {/* 고객 센터 */}
       <div className="footer__customer-service">
-        <p><a href="#" className="text-gray-500 underline" target="_blank">개인정보처리방침</a> <a href="#" className="text-gray-500 underline" target="_blank">이용약관</a></p>
-        <p className="font-semibold text-gray-500">일부 상품의 경우 주식회사 무신사는 통신판매의 당사자가 아닌 통신중개판매자로서 상품, 상품정보, 거래에 대한 
+        <p><a href="#" className="text-gray-500 underline hover:text-gray-700" target="_blank">개인정보처리방침</a> <a href="#" className="text-gray-500 underline hover:text-gray-700" target="_blank">이용약관</a></p>
+        <p className="font-semibold text-gray-500">일부 상품의 경우 주식회사 무신일은 통신판매의 당사자가 아닌 통신중개판매자로서 상품, 상품정보, 거래에 대한 
           책임이 제한될 수 있으므로, 각 상품 페이지에서 구체적인 내용을 확인하시기 바랍니다.</p>
       </div>
 
