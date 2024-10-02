@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cart from "../components/Cart";
+import EmptyCart from "../components/EmptyCart";
 
 interface Product {
     id: number;
@@ -9,9 +10,14 @@ interface Product {
     image: string;
 }
 
-function ShoppingCart() {
+interface ProuductProps {
+    item: Product;
+}
+
+const ShoppingCart: React.FC<ProuductProps> = () => {
     const [products, getProducts] = useState<Product[]>([]);
     const data: Product[] = [];
+    const [isEmpty, setIsEmpty] = useState(false);
 
     const getData = async() => {
         const json = await (
@@ -28,6 +34,10 @@ function ShoppingCart() {
                 image: item.image
             })
         })
+        console.log(jsonData);
+        if (jsonData.isEmpty) {
+            setIsEmpty(!isEmpty);
+        }
         getProducts(jsonData);
     };
 
@@ -39,10 +49,19 @@ function ShoppingCart() {
         getData();
     }, [])
 
+    useEffect(() => {
+        if (products.length > 0) {
+            setIsEmpty(false)
+        } else {
+            setIsEmpty(true)
+        }
+    }, [products])
+
     return (
         <div>
-            <p>shopping cart</p>
-            <Cart items={products} />
+            <p>장바구니</p>
+            {isEmpty ? <EmptyCart /> : products.map((product) => { return <Cart item={product} />})
+            } 
         </div>
     )
 }

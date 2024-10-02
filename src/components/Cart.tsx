@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import cancel from "../assets/cancel.svg";
+import checked from "../assets/checked.svg";
+import unchecked from "../assets/unchecked.svg"; 
 
 interface Product {
     id: number;
@@ -9,47 +11,52 @@ interface Product {
     image: string;
 }
 
-interface CartProps {
-    items: Product[];
-}
+const Cart: React.FC<Product> = ({ item }) => {
+    const [isChecked, setIsChecked] = useState(false);
+    const [isExist, setIsExist] = useState(true);
 
-const Cart: React.FC<CartProps> = ({ items }) => {
     const handleCancel = () => {
-        
+        setIsExist(false);
     }
 
-    console.log('여기')
-    console.log(items);
+    const toggleCheckbox = () => {
+        setIsChecked(!isChecked);
+    };
+
+    if (!isExist) {
+        return null;
+    }
+
     return (
-        items.map((item) => (
-
-    <div className="p-4 border-gray-200">
-        <div className="flex items-center mb-2">
-            <input type="checkbox" className="mr-2 border-gray-400 rounded" />
-            <div>{item.title}</div>
-        </div>
-
-        <div className="flex items-start mb-2">
-            <input type="checkbox" className="mr-2" />
-            <img 
-                src={item.image ? item.image : "https://via.placeholder.com/300x400?text=Item+1"} 
-                alt={item.title} 
-                className="h-20 w-20 object-cover mr-4" />
-            <div className="flex-1">
-                <div className="font-medium">{item.title}</div>
-                <div className="text-sm text-gray-500">브라운 / 1개</div>
-                <div className="font-semibold">${item.price}</div>
+        <div className="p-6 border-gray-200 bg-white">
+            <div className="flex items-center mb-2">
+                <div className="text-black font-bold">{item.category}</div>
             </div>
-            <img src={cancel} alt="Cancel" className="h-3 w-3 cursor-pointer" onClick={handleCancel} />
-        </div>
 
-        <div className="flex space-x-2">
-            <button className="flex-grow border rounded-sm bg-white border-gray-400 py-1 px-3 text-sm text-black">옵션변경</button>
-            <button className="flex-grow border rounded-sm bg-white border-gray-400 py-2 px-3 text-sm text-black">쿠폰사용</button>
+            <div className="flex items-start mb-3 mt-3 gap-3">
+                <img
+                    src={isChecked ? checked : unchecked}
+                    alt={isChecked ? 'Checked' : 'Unchecked'}
+                    onClick={toggleCheckbox}
+                    className="h-7 w-7"
+                    />
+                <img 
+                    src={item.image ? item.image : "https://via.placeholder.com/300x400?text=Item+1"} 
+                    className="w-28 h-28 rounded-sm" />
+                <div className="flex-1">
+                    <div className="font-medium text-black">{item.title}</div>
+                    <div className="text-sm text-gray-500">블랙 / 1개</div>
+                    <div className="font-semibold text-black">${item.price}</div>
+                </div>
+                <img src={cancel} alt="Cancel" className="h-3 w-3 cursor-pointer" onClick={handleCancel} />
+            </div>
+
+            <div className="flex space-x-2">
+                <button className="flex-grow border rounded-sm bg-white border-gray-400 py-1 px-3 text-sm text-black hover:rounded-sm">옵션변경</button>
+                <button className="flex-grow border rounded-sm bg-white border-gray-400 py-2 px-3 text-sm text-black hover:rounded-sm">쿠폰사용</button>
+            </div>
         </div>
-    </div>
-        ))
-  );
+    );
 };
 
 export default Cart;
