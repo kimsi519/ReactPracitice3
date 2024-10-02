@@ -34,7 +34,7 @@ const Etc: React.FC = () => {
 
   return (
     <div style={styles.grid}>
-      {products.slice(16, 26).map((product) => {
+      {products.slice(16, 25).map((product) => {
         const hasDiscount = Math.random() < 0.4;
         const discount = hasDiscount ? Math.floor(Math.random() * 50) + 1 : 0; // 1%에서 50% 사이의 랜덤 값
 
