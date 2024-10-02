@@ -21,7 +21,12 @@ const Header: React.FC = () => {
         {/* 검색창 */}
         <div className="header__search">
           <input type="text" placeholder="검색어를 입력하세요" />
-          <button type="submit">검색</button>
+          <button type="submit">
+            <img
+              alt="search"
+              src="https://img.icons8.com/?size=100&id=7695&format=png&color=808080"
+            />
+          </button>
         </div>
 
         {/* 사용자 메뉴 */}
