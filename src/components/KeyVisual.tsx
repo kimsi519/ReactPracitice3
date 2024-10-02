@@ -32,7 +32,7 @@ interface KeyVisualProps {
         <Slider {...settings}>
           {images.map((imgSrc, index) => (
             <div key={index}>
-              <img src={imgSrc} alt={`Slide ${index + 1}`} style={{ width: '500px', height: '500px' }} />
+              <img src={imgSrc} alt={`Slide ${index + 1}`} style={{ width: '700px', height: '700px' }} />
             </div>
           ))}
         </Slider>

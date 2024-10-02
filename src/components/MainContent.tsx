@@ -66,19 +66,18 @@ const MainContent: React.FC = () => {
   ]
 
   return (
-    <main className="main-content">
+    <main className="mb-10 main-content">
       {/* 이미지 캐러셀 */}
-    <div style={{ width: '500px', margin: '0 auto'}} className="mb-10">
-      {definedImages.length > 0 ? (
-        <KeyVisual images={definedImages} />
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-
+      <div style={{ width: '700px', margin: '0'}} className="mb-10">
+        {definedImages.length > 0 ? (
+          <KeyVisual images={definedImages} />
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
 
       <h2>신상품</h2>
-      <div className="product-grid">
+      <div className="mt-10 product-grid">
         {sampleProducts.map((product) => (
           <div className="product-card" key={product.id}>
             <img src={product.imageUrl} alt={product.name} />

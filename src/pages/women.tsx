@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 interface Product {
   id: number;
   title: string;
@@ -7,12 +6,10 @@ interface Product {
   image: string;
   category: string;
 }
-
 const Women: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,12 +18,18 @@ const Women: React.FC = () => {
           throw new Error("상품을 불러오는 데 실패했습니다.");
         }
         const data = await response.json();
-        // "women's clothing" 및 "men's clothing" 카테고리의 제품만 필터링
-        const clothingProducts = data.filter(
-          (product: Product) =>
-            product.category === "women's clothing" ||
-            product.category === "men's clothing"
-        );
+        // "women's clothing"에서 5개, "men's clothing"에서 4개 필터링
+        const womenProducts = data
+          .filter((product: Product) => product.category === "women's clothing")
+          .slice(0, 6);
+        const menProducts = data
+          .filter((product: Product) => product.category === "men's clothing")
+          .slice(1, 4)
+          .map((product) => ({
+            ...product,
+            title: product.title.replace(/Mens/g, ""), //
+          }));
+        const clothingProducts = [...womenProducts, ...menProducts];
         setProducts(clothingProducts);
       } catch (err) {
         setError("상품을 불러오는 데 실패했습니다.");
@@ -34,13 +37,10 @@ const Women: React.FC = () => {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
-
   if (loading) return <div>로딩 중...</div>;
   if (error) return <div>{error}</div>;
-
   const formatPrice = (price: number): string => {
     // 가격을 정수로 변환하고 3자리마다 콤마 추가
     return (
@@ -49,13 +49,11 @@ const Women: React.FC = () => {
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ",000"
     );
   };
-
   return (
     <div style={styles.grid}>
       {products.map((product) => {
         const hasDiscount = Math.random() < 0.4;
         const discount = hasDiscount ? Math.floor(Math.random() * 50) + 1 : 0; // 1%에서 50% 사이의 랜덤 값
-
         return (
           <div key={product.id} style={styles.product}>
             <div style={styles.imageContainer}>
@@ -76,7 +74,6 @@ const Women: React.FC = () => {
     </div>
   );
 };
-
 const styles: { [key: string]: React.CSSProperties } = {
   grid: {
     display: "flex",
@@ -129,5 +126,4 @@ const styles: { [key: string]: React.CSSProperties } = {
     flex: "1 0 auto",
   },
 };
-
 export default Women;
