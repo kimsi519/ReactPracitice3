@@ -17,7 +17,7 @@ const Card: React.FC<{ product: Product }> = ({ product }) => {
     <Link
       to={`/product/${product.id}`}
       key={product.id}
-      className="w-32 p-1 text-black flex flex-col rounded-lg hover:bg-gray-100 hover:cursor-pointer hover:text-black"
+      className="flex flex-col w-32 p-1 text-black rounded-lg hover:bg-gray-100 hover:cursor-pointer hover:text-black"
     >
       <img className="w-32 h-32" src={product.image} alt={product.title} />
       <div>
@@ -43,11 +43,11 @@ const CardGrid: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-wrap space-y-4 mt-7">
+    <div className="flex flex-wrap w-full gap-2 p-1 space-y-4">
       {products.length > 0 ? (
         products.map((product) => <Card product={product}></Card>)
       ) : (
-        <p>Loading...</p>
+        <p className="text-center">Loading...</p>
       )}
     </div>
   );

@@ -39,7 +39,7 @@ const Women: React.FC = () => {
     };
     fetchProducts();
   }, []);
-  if (loading) return <div>로딩 중...</div>;
+  if (loading) return <div style={styles.ifnone}>로딩 중...</div>;
   if (error) return <div>{error}</div>;
   const formatPrice = (price: number): string => {
     // 가격을 정수로 변환하고 3자리마다 콤마 추가
@@ -125,5 +125,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     textAlign: "right",
     flex: "1 0 auto",
   },
+  ifnone: {
+    height:"1000px",
+  }
 };
 export default Women;

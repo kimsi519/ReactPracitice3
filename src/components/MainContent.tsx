@@ -70,20 +70,9 @@ const MainContent: React.FC = () => {
           <p>Loading...</p>
         )}
       </div>
-
-      <h2>신상품</h2>
-      <div className="mt-10 product-grid">
-        {sampleProducts.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img src={product.imageUrl} alt={product.name} />
-            <h3 className="product-card__name">{product.name}</h3>
-            <p className="product-card__price">
-              {product.price.toLocaleString()}원
-            </p>
-          </div>
-        ))}
+      <div className="flex justify-center mt-12">
+        <h2 className="font-bold">신상품</h2>
       </div>
-
       <CardGrid></CardGrid>
     </main>
   );

@@ -31,7 +31,7 @@ const Best: React.FC = () => {
     fetchProducts();
   }, []);
 
-  if (loading) return <div>로딩 중...</div>;
+  if (loading) return <div style={styles.ifnone}>로딩 중...</div>;
   if (error) return <div>{error}</div>;
 
   return (
@@ -99,6 +99,9 @@ const styles: { [key: string]: React.CSSProperties } = {
     textAlign: "right",
     flex: "1 0 auto",
   },
+  ifnone: {
+    height:"1000px",
+  }
 };
 
 export default Best;
