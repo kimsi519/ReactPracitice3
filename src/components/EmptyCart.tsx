@@ -1,7 +1,12 @@
 import React from 'react'
 
-export default function EmptyCart() {
+const EmptyCart: React.FC = () => {
   return (
-    <div>장바구니가 비었습니다.</div>
+    <div className="justify-center p-28">
+      <p className="font-extrabold text-lg">장바구니에 담은 상품이 없어요</p>
+      <p className="text-lg">상품을 추가해보세요.</p>
+    </div>
   )
 }
+
+export default EmptyCart;
